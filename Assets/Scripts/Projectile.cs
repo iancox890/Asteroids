@@ -3,7 +3,8 @@ using UnityEngine;
 namespace Asteroids
 {
     /// <summary>
-    /// Disables a projectile when it is no longer visible by the camera.
+    /// Disables a projectile after its lifetime is reached, 
+	/// shrinking the scale over the course of its lifetime.
     /// </summary>
     public class Projectile : MonoBehaviour
     {
@@ -37,7 +38,6 @@ namespace Asteroids
                 return;
             }
 
-            // Shrinks the projectile over the course of its lifetime.
             _transform.localScale = _scale * Mathf.InverseLerp(_disableTime, _enableTime, Time.time);
         }
     }
