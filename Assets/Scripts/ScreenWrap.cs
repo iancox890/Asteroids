@@ -14,22 +14,27 @@ namespace Asteroids
         private void Start()
         {
             _transform = GetComponent<Transform>();
-            _screenBorder = new Vector2(Camera.main.orthographicSize * 2, (Camera.main.aspect * Camera.main.orthographicSize) / 2);
+            _screenBorder = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
+
+            Vector2 scaleOffset = _transform.localScale * GetComponent<SpriteRenderer>().size;
+
+            _screenBorder.x += scaleOffset.x;
+            _screenBorder.y += scaleOffset.y;
         }
 
-        private void OnBecameInvisible()
+        private void Update()
         {
             Vector2 position = _transform.position;
 
             if (position.x > _screenBorder.x || position.x < -_screenBorder.x)
             {
-                position.x = -position.x;
+                position.x = -(int)position.x;
                 _transform.position = position;
             }
 
             if (position.y > _screenBorder.y || position.y < -_screenBorder.y)
             {
-                position.y = -position.y;
+                position.y = -(int)position.y;
                 _transform.position = position;
             }
         }

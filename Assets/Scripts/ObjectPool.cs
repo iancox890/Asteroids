@@ -3,25 +3,26 @@ using System.Collections.Generic;
 
 namespace Asteroids
 {
+    /// <summary>
+    /// Manages a list of object pools accessible via a string key.
+    /// </summary>
     public class ObjectPool : MonoBehaviour
     {
-        [SerializeField] private List<Pool> pools = new List<Pool>();
+        [SerializeField] private List<Pool> _pools = new List<Pool>();
 
-        private Dictionary<string, Pool> poolDictionary = new Dictionary<string, Pool>();
+        private Dictionary<string, Pool> _poolDictionary = new Dictionary<string, Pool>();
         private Transform parent;
-
-        public Dictionary<string, Pool> PoolDictionary => poolDictionary;
 
         private void Start()
         {
             parent = GetComponent<Transform>();
 
-            for (int i = 0; i < pools.Count; i++)
+            for (int i = 0; i < _pools.Count; i++)
             {
-                Pool pool = pools[i];
+                Pool pool = _pools[i];
                 pool.FillPool(parent);
 
-                poolDictionary.Add(pool.Key, pool);
+                _poolDictionary.Add(pool.Key, pool);
             }
         }
 
@@ -29,11 +30,13 @@ namespace Asteroids
         /// Pulls an object by key from the pool of a certain type at a set position and rotation.
         /// This object will be set to active upon return.
         ///</summary>
-        public T PullObjectFromPool<T>(string key)
+        public T PullObjectFromPool<T>(string key, Vector2 position)
         {
-            Pool pool = poolDictionary[key];
+            Pool pool = _poolDictionary[key];
 
             GameObject obj = pool.PullObject(parent);
+
+            obj.transform.position = position;
             obj.SetActive(true);
 
             return obj.GetComponent<T>();
@@ -46,8 +49,7 @@ namespace Asteroids
         [SerializeField] private GameObject _prefab;
         [SerializeField] private int _count;
         [SerializeField] private string _key;
-
-        private List<GameObject> _objects;
+        [SerializeField] private List<GameObject> _objects;
 
         public string Key => _key;
 
