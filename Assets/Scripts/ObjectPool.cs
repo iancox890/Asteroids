@@ -30,14 +30,12 @@ namespace Asteroids
         /// Pulls an object by key from the pool of a certain type at a set position and rotation.
         /// This object will be set to active upon return.
         ///</summary>
-        public T PullObjectFromPool<T>(string key, Vector2 position)
+        public T PullObjectFromPool<T>(string key)
         {
             Pool pool = _poolDictionary[key];
-
             GameObject obj = pool.PullObject(parent);
 
-            obj.transform.position = position;
-            obj.SetActive(true);
+            Debug.Log("pulling: " + key);
 
             return obj.GetComponent<T>();
         }

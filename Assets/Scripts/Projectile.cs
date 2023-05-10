@@ -30,6 +30,14 @@ namespace Asteroids
             _disableTime = _enableTime + _lifetime;
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player") == false)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+
         private void Update()
         {
             if (Time.time > _disableTime)

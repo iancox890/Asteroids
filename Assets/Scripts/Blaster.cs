@@ -23,7 +23,11 @@ namespace Asteroids
 
         public void Fire()
         {
-            Rigidbody2D projectile = _objectPool.PullObjectFromPool<Rigidbody2D>("Projectile", _transform.position);
+            Rigidbody2D projectile = _objectPool.PullObjectFromPool<Rigidbody2D>("Projectile");
+
+            projectile.transform.position = _transform.position;
+            projectile.gameObject.SetActive(true);
+
             projectile.velocity = _transform.up * _blastForce;
         }
 
