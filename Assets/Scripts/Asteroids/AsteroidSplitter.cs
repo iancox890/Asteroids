@@ -16,10 +16,9 @@ namespace Asteroids
         private const int SPLIT_COUNT = 2;
 
         [SerializeField] private float _splitScaleThreshold;
-        [SerializeField] private float _minSplitSpeed;
 
         private ObjectPool _objectPool;
-        private AsteroidDestruction _asteroidDestruction;
+        private AsteroidDestroyer _asteroidDestruction;
 
         private Transform _transform;
         private Rigidbody2D _rigidbody;
@@ -27,19 +26,19 @@ namespace Asteroids
         private void Start()
         {
             _objectPool = FindObjectOfType<ObjectPool>();
-            _asteroidDestruction = GetComponent<AsteroidDestruction>();
+            _asteroidDestruction = GetComponent<AsteroidDestroyer>();
 
             _transform = GetComponent<Transform>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
-            _asteroidDestruction.OnDestroyed += Split;
+            _asteroidDestruction.OnAsteroidDestroyed += Split;
         }
 
         private void OnDestroy()
         {
             if (_asteroidDestruction != null)
             {
-                _asteroidDestruction.OnDestroyed -= Split;
+                _asteroidDestruction.OnAsteroidDestroyed -= Split;
             }
         }
 
@@ -52,24 +51,15 @@ namespace Asteroids
             }
 
             Vector2 position = _transform.position;
-            Vector2 direction = Random.insideUnitCircle;
+            float scalePercent = Random.Range(0.5f, 0.65f);
 
             float magnitude = _rigidbody.velocity.magnitude;
             float torque = _rigidbody.angularVelocity;
 
-            float scalePercent = Random.Range(0.5f, 0.65f);
-
-            if (magnitude < _minSplitSpeed)
-            {
-                magnitude = _minSplitSpeed;
-            }
-
             for (int i = 0; i < SPLIT_COUNT; i++)
             {
                 Vector2 scale = Vector2.one * asteroidScale * scalePercent;
-                AsteroidSpawner.Spawn(position, scale, magnitude * direction, torque);
-
-                direction = -direction;
+                AsteroidSpawner.Spawn(position, scale, magnitude * Random.insideUnitCircle, torque);
             }
         }
     }

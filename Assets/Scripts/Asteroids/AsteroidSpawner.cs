@@ -9,7 +9,6 @@ namespace Asteroids
     public static class AsteroidSpawner
     {
         private static ObjectPool _objectPool;
-
         static AsteroidSpawner() => _objectPool = GameObject.FindObjectOfType<ObjectPool>();
 
         public static void Spawn(Vector2 position, Vector2 scale, Vector2 velocity, float angularVelocity)
