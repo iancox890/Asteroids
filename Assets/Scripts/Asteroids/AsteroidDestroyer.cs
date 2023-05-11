@@ -12,7 +12,7 @@ namespace AsteroidsApp.Asteroid
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Projectile") == false)
+            if (other.CompareTag("Projectile") == false && other.CompareTag("Player") == false)
             {
                 return;
             }

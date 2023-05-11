@@ -5,7 +5,7 @@ namespace AsteroidsApp.Player
     /// <summary>
     /// Handles input and movement for the player ship.
     /// </summary>
-    public class PlayerController : MonoBehaviour
+    public class PlayerShipController : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
         [SerializeField] private float _turnSpeed;

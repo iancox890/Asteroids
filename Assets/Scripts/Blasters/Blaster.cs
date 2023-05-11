@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp
+namespace AsteroidsApp.Blasters
 {
     /// <summary>
     /// The default blaster for the player, firing
