@@ -1,7 +1,11 @@
 using UnityEngine;
 
-namespace Asteroids.WaveManagement
+namespace AsteroidsApp.WaveManagement
 {
+    /// <summary>
+    /// Represents an enemy actor which is a part of a wave.
+    /// Adds/subtracts from the overall wave enemy count.
+    /// </summary>
     public class WaveEnemy : MonoBehaviour
     {
         private static int _count;

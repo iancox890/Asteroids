@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp
 {
     /// <summary>
     /// Disables a projectile after its lifetime is reached, 

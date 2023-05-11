@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp
 {
     public static class ScreenBounds
     {

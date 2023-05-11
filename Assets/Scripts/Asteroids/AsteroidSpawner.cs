@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp.Asteroid
 {
     /// <summary>
     /// Spawns an asteroid from the object pool at a set position, scale, 

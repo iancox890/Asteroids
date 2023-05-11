@@ -1,8 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Asteroids.WaveManagement
+using AsteroidsApp.Asteroid;
+
+namespace AsteroidsApp.WaveManagement
 {
+    /// <summary>
+    /// Responsible for the spawn details of asteroids for each wave.
+    /// </summary>
     public class AsteroidWave : MonoBehaviour
     {
         [Header("Wave Settings")]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp
 {
     /// <summary>
     /// Handles screen wrapping for a given game object.

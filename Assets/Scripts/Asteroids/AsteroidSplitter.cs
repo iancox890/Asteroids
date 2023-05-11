@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp.Asteroid
 {
     /// <summary>
     /// Controls whether or not an asteroid gets split on collision.

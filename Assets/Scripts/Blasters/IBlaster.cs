@@ -1,4 +1,4 @@
-namespace Asteroids
+namespace AsteroidsApp.Blasters
 {
     /// <summary>
     /// Defines the blaster fire method and input handling.

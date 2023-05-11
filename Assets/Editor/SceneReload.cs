@@ -1,7 +1,7 @@
 using UnityEditor.SceneManagement;
 using UnityEditor;
 
-namespace Asteroids.Editor
+namespace AsteroidsApp.Editor
 {
     public class SceneReload
     {

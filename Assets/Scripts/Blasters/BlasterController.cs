@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Asteroids
+namespace AsteroidsApp.Blasters
 {
     /// <summary>
     /// Handles the current IBlaster attached to this object.
