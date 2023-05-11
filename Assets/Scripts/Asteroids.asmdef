@@ -1,6 +1,6 @@
 {
     "name": "Asteroids",
-    "rootNamespace": "Asteroids",
+    "rootNamespace": "AsteroidsApp",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
