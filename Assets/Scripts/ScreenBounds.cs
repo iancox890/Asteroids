@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace AsteroidsApp
 {
+    /// <summary>
+    /// Helper class for accessing and manipulating
+    /// screen bounds.
+    /// </summary>
     public static class ScreenBounds
     {
         private static Vector2 _bounds;

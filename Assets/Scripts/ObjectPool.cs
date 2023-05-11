@@ -26,10 +26,6 @@ namespace AsteroidsApp
             }
         }
 
-        ///<summary>
-        /// Pulls an object by key from the pool of a certain type at a set position and rotation.
-        /// This object will be set to active upon return.
-        ///</summary>
         public T PullObjectFromPool<T>(string key)
         {
             Pool pool = _poolDictionary[key];
