@@ -8,16 +8,10 @@ namespace Asteroids.WaveManagement
         [Header("Wave Settings")]
 
         [SerializeField] private int _spawnCount;
-        [SerializeField] private int _spawnMultiplier;
-        [SerializeField] private float _timeBetweenSpawns;
-
-        [Space(2)]
-
-        [Header("Asteroid Settings")]
-
+        [SerializeField] private float _spawnMultiplier;
         [SerializeField] private Vector2 _spawnScaleRange;
-        [SerializeField] private Vector2 _spawnVelocityRange;
-        [SerializeField] private Vector2 _spawnAngularVelocityRange;
+        [Space(2)]
+        [SerializeField] private float _timeBetweenSpawns;
 
         private WaveManager _waveManager;
         private WaitForSeconds _spawnTime;
@@ -43,16 +37,14 @@ namespace Asteroids.WaveManagement
 
         private IEnumerator SpawnWave()
         {
-            int asteroidsToSpawn = _spawnCount + (_spawnMultiplier * _waveManager.Wave);
+            int asteroidsToSpawn = (int)(_spawnCount + (_spawnMultiplier * _waveManager.Wave));
 
             for (int i = 0; i < asteroidsToSpawn; i++)
             {
                 Vector2 spawnScale = Vector2.one * Random.Range(_spawnScaleRange.x, _spawnScaleRange.y);
                 Vector2 spawnPosition = ScreenBounds.GetRandomBoundsPosition(spawnScale.x);
-                Vector2 spawnVelocity = Random.insideUnitCircle * Random.Range(_spawnVelocityRange.x, _spawnVelocityRange.y);
-                float spawnAngularVelocity = Random.Range(_spawnAngularVelocityRange.x, _spawnAngularVelocityRange.y);
 
-                AsteroidSpawner.Spawn(spawnPosition, spawnScale, spawnVelocity, spawnAngularVelocity);
+                AsteroidSpawner.Spawn(spawnScale, spawnPosition);
 
                 yield return _spawnTime;
             }

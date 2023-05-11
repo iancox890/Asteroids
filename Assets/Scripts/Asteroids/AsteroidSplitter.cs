@@ -7,9 +7,6 @@ namespace Asteroids
     /// 
     /// If so, it splits the asteroid up into two halves of the destroyed asteroids scale
     /// distributed randomly across the two new asteroids.
-    /// 
-    /// The split asteroids will inherit both linear and angular velocity of the destroyed
-    /// asteroid, and launch in opposite directions of each other.
     /// </summary>
     public class AsteroidSplitter : MonoBehaviour
     {
@@ -59,7 +56,7 @@ namespace Asteroids
             for (int i = 0; i < SPLIT_COUNT; i++)
             {
                 Vector2 scale = Vector2.one * asteroidScale * scalePercent;
-                AsteroidSpawner.Spawn(position, scale, magnitude * Random.insideUnitCircle, torque);
+                AsteroidSpawner.Spawn(scale, position);
             }
         }
     }

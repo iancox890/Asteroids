@@ -3,33 +3,41 @@ using UnityEngine;
 namespace Asteroids
 {
     /// <summary>
-    /// Controls the asteroid movement and position/scale.
+    /// Handles the asteroid movement and position/scale.
     /// </summary>
     public class AsteroidController : MonoBehaviour
     {
+        [SerializeField] private Vector2 _spawnVelocityRange;
+        [SerializeField] private Vector2 _spawnAngularVelocityRange;
+
         private Rigidbody2D _rigidbody;
         private Transform _transform;
 
-        public void Initialize(Vector2 position, Vector2 scale)
+        private void OnEnable()
+        {
+            SetMotion();
+        }
+
+        public void Initialize(Vector2 scale, Vector2 position)
         {
             if (_transform == null)
             {
                 _transform = GetComponent<Transform>();
             }
 
-            _transform.position = position;
             _transform.localScale = scale;
+            _transform.position = position;
         }
 
-        public void SetMotion(Vector2 velocity, float angularVelocity)
+        private void SetMotion()
         {
             if (_rigidbody == null)
             {
                 _rigidbody = GetComponent<Rigidbody2D>();
             }
 
-            _rigidbody.velocity = velocity;
-            _rigidbody.angularVelocity = angularVelocity;
+            _rigidbody.velocity = Random.insideUnitCircle * Random.Range(_spawnVelocityRange.x, _spawnVelocityRange.y);
+            _rigidbody.angularVelocity = Random.Range(_spawnAngularVelocityRange.x, _spawnAngularVelocityRange.y);
         }
     }
 }

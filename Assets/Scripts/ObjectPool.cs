@@ -13,7 +13,7 @@ namespace Asteroids
         private Dictionary<string, Pool> _poolDictionary = new Dictionary<string, Pool>();
         private Transform parent;
 
-        private void Start()
+        private void Awake()
         {
             parent = GetComponent<Transform>();
 
@@ -35,8 +35,6 @@ namespace Asteroids
             Pool pool = _poolDictionary[key];
             GameObject obj = pool.PullObject(parent);
 
-            Debug.Log("pulling: " + key);
-
             return obj.GetComponent<T>();
         }
     }
@@ -47,7 +45,8 @@ namespace Asteroids
         [SerializeField] private GameObject _prefab;
         [SerializeField] private int _count;
         [SerializeField] private string _key;
-        [SerializeField] private List<GameObject> _objects;
+
+        private List<GameObject> _objects;
 
         public string Key => _key;
 
@@ -60,8 +59,10 @@ namespace Asteroids
             return obj;
         }
 
-        internal void FillPool(Transform parent)
+        public void FillPool(Transform parent)
         {
+            _objects = new List<GameObject>();
+
             for (int i = 0; i < _count; i++)
             {
                 AddObjectToPool(parent);
@@ -76,12 +77,10 @@ namespace Asteroids
             for (int i = 0; i < count; i++)
             {
                 var obj = _objects[i];
-
                 if (obj.activeSelf == false) return obj;
             }
 
-            // No inactive object exists, so create a new one 
-            // and add it to the pool.
+            // No inactive object exists, so create a new one and add it to the pool.
             return AddObjectToPool(parent);
         }
     }

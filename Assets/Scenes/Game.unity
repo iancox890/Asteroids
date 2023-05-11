@@ -333,11 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnCount: 2
-  _spawnMultiplier: 2
-  _timeBetweenSpawns: 1.5
-  _spawnScaleRange: {x: 0.5, y: 2.5}
-  _spawnVelocityRange: {x: 2, y: 5}
-  _spawnAngularVelocityRange: {x: -15, y: 15}
+  _spawnMultiplier: 1.25
+  _spawnScaleRange: {x: 1, y: 2.5}
+  _timeBetweenSpawns: 2
 --- !u!1 &1268634213
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,11 +474,9 @@ MonoBehaviour:
   - _prefab: {fileID: 8107534057454158404, guid: c9e4c56fab43f704c8a7273617b5cc2f, type: 3}
     _count: 10
     _key: Projectile
-    _objects: []
   - _prefab: {fileID: 2696715453529802585, guid: bdb6b5d0b0def5b47b80431710c3c3ce, type: 3}
     _count: 10
     _key: Asteroid
-    _objects: []
 --- !u!4 &1625037308
 Transform:
   m_ObjectHideFlags: 0
