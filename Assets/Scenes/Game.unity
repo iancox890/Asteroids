@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 921361626}
   - component: {fileID: 921361628}
   - component: {fileID: 921361631}
+  - component: {fileID: 921361632}
   - component: {fileID: 921361629}
   - component: {fileID: 921361625}
   - component: {fileID: 921361627}
@@ -301,7 +302,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017bb8278e9c76d4fac5cd9c77db1f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathTag: Destroyer
+--- !u!114 &921361632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921361624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115b3c0a4757d904881736a49d8c41e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 2
+  _flashCount: 2
+  _opacity: 0
 --- !u!1 &968603809
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +374,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161733959}
+  - component: {fileID: 1161733961}
+  - component: {fileID: 1161733960}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -382,6 +399,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161733960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161733958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19beec37b9251914fbe40c4b0aa21e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerShip: {fileID: 921361626}
+  _respawnDelay: 0.5
+--- !u!114 &1161733961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161733958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0932e8d89fc7449ecba0e9457812a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeCount: 3
 --- !u!1 &1268634213
 GameObject:
   m_ObjectHideFlags: 0

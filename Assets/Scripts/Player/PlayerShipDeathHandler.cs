@@ -7,16 +7,29 @@ namespace AsteroidsApp.Player
     /// </summary>
     public class PlayerShipDeathHandler : MonoBehaviour
     {
+        private Rigidbody2D _rigidbody;
+
+        public bool IsInvincible { get; set; }
+
         public event System.Action OnDeath;
+
+        private void Start()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Asteroid") == false)
+            if (other.CompareTag("Asteroid") == false || IsInvincible)
             {
                 return;
             }
 
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.angularVelocity = 0;
+
             gameObject.SetActive(false);
+
             OnDeath?.Invoke();
         }
     }

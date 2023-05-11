@@ -13,6 +13,8 @@ namespace AsteroidsApp.Player
 
         private PlayerLifeManager _lifeManager;
 
+        public event System.Action OnRespawn;
+
         private void Start()
         {
             _lifeManager = GetComponent<PlayerLifeManager>();
@@ -34,8 +36,8 @@ namespace AsteroidsApp.Player
 
         private void Respawn()
         {
-            _playerShip.position = Vector2.zero;
             _playerShip.gameObject.SetActive(true);
+            OnRespawn?.Invoke();
         }
     }
 }
