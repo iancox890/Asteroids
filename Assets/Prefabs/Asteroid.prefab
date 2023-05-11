@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3718589028504122902}
   - component: {fileID: 8663372243217941036}
   - component: {fileID: 1089157721098001786}
+  - component: {fileID: 2576547244697275469}
   - component: {fileID: 3314729100835986800}
   - component: {fileID: 354155969505292465}
   - component: {fileID: 3862033996205170200}
@@ -50,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20d015254229e64b907959926293ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnVelocityRange: {x: 2, y: 4}
+  _spawnAngularVelocityRange: {x: -90, y: 90}
 --- !u!114 &8663372243217941036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +78,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _splitScaleThreshold: 1
-  _minSplitSpeed: 1.25
+--- !u!114 &2576547244697275469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696715453529802585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b59c91111011643beeda8dbd1bb9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3314729100835986800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33e68f6444ebbe046ad2b815ec79e1d7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,7 +168,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1

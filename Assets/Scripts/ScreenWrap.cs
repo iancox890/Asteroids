@@ -9,32 +9,33 @@ namespace Asteroids
     public class ScreenWrap : MonoBehaviour
     {
         private Transform _transform;
-        private Vector2 _screenBorder;
+        private Vector2 _wrapBounds;
 
         private void Start()
         {
             _transform = GetComponent<Transform>();
-            _screenBorder = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
 
             Vector2 scaleOffset = _transform.localScale * GetComponent<SpriteRenderer>().size;
 
-            _screenBorder.x += scaleOffset.x;
-            _screenBorder.y += scaleOffset.y;
+            _wrapBounds = ScreenBounds.Bounds;
+
+            _wrapBounds.x += scaleOffset.x;
+            _wrapBounds.y += scaleOffset.y;
         }
 
         private void Update()
         {
             Vector2 position = _transform.position;
 
-            if (position.x > _screenBorder.x || position.x < -_screenBorder.x)
+            if (position.x > _wrapBounds.x || position.x < -_wrapBounds.x)
             {
-                position.x = -(int)position.x;
+                position.x = Mathf.Clamp(-position.x, -_wrapBounds.x, _wrapBounds.x);
                 _transform.position = position;
             }
 
-            if (position.y > _screenBorder.y || position.y < -_screenBorder.y)
+            if (position.y > _wrapBounds.y || position.y < -_wrapBounds.y)
             {
-                position.y = -(int)position.y;
+                position.y = Mathf.Clamp(-position.y, -_wrapBounds.y, _wrapBounds.y);
                 _transform.position = position;
             }
         }

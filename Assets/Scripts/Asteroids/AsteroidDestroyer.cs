@@ -1,13 +1,14 @@
 using UnityEngine;
+using System;
 
 namespace Asteroids
 {
     /// <summary>
     /// Handles the destruction for a given asteroid. (i.e., getting hit by a projectile)
     /// </summary>
-    public class AsteroidDestruction : MonoBehaviour
+    public class AsteroidDestroyer : MonoBehaviour
     {
-        public event System.Action OnDestroyed;
+        public event Action OnAsteroidDestroyed;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -16,7 +17,7 @@ namespace Asteroids
                 return;
             }
 
-            OnDestroyed?.Invoke();
+            OnAsteroidDestroyed?.Invoke();
             gameObject.SetActive(false);
         }
     }
