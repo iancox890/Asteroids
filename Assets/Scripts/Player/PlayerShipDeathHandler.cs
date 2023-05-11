@@ -4,10 +4,12 @@ using System.Collections.Generic;
 namespace Asteroids
 {
     /// <summary>
-    /// Controls when and if the player dies.
+    /// Controls when and if the player ship dies.
     /// </summary>
-    public class PlayerDeathHandler : MonoBehaviour
+    public class PlayerShipDeathHandler : MonoBehaviour
     {
+        public event System.Action OnDeath;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Asteroid") == false)
@@ -16,6 +18,7 @@ namespace Asteroids
             }
 
             gameObject.SetActive(false);
+            OnDeath?.Invoke();
         }
     }
 }
