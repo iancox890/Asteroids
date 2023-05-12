@@ -9,8 +9,6 @@ namespace AsteroidsApp.Player
     {
         private Rigidbody2D _rigidbody;
 
-        public bool IsInvincible { get; set; }
-
         public event System.Action OnDeath;
 
         private void Start()
@@ -20,7 +18,7 @@ namespace AsteroidsApp.Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Asteroid") == false || IsInvincible)
+            if (other.CompareTag("Asteroid") == false)
             {
                 return;
             }

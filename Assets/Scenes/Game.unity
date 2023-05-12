@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 8
-  _turnSpeed: 1.5
+  _turnSpeed: 25
 --- !u!114 &921361629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,7 +5097,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5240,7 +5240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerShip: {fileID: 921361624}
-  _respawnDelay: 0.5
+  _respawnDelay: 1.75
 --- !u!114 &1161733961
 MonoBehaviour:
   m_ObjectHideFlags: 0

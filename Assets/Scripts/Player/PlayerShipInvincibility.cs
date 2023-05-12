@@ -17,13 +17,13 @@ namespace AsteroidsApp.Player
         [SerializeField] private float _flashCount;
         [SerializeField] private float _opacity;
 
-        private PlayerShipDeathHandler _deathHandler;
+        private Collider2D _collider;
         private SpriteRenderer _spriteRenderer;
         private Color _spriteColor;
 
         private void Start()
         {
-            _deathHandler = GetComponent<PlayerShipDeathHandler>();
+            _collider = GetComponent<Collider2D>();
 
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _spriteColor = _spriteRenderer.color;
@@ -44,7 +44,7 @@ namespace AsteroidsApp.Player
 
         private IEnumerator EnableInvincibility(float invincibilityEndTime)
         {
-            _deathHandler.IsInvincible = true;
+            _collider.enabled = false;
 
             Color lerpColor = _spriteColor;
 
@@ -61,7 +61,7 @@ namespace AsteroidsApp.Player
                 yield return null;
             }
 
-            _deathHandler.IsInvincible = false;
+            _collider.enabled = true;
         }
     }
 }
