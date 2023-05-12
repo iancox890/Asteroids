@@ -8,7 +8,15 @@ namespace AsteroidsApp.Asteroid
     /// </summary>
     public class AsteroidDestroyer : MonoBehaviour
     {
+        private Transform _transform;
+
         public event Action OnAsteroidDestroyed;
+        public static event Action<Transform> OnAnyAsteroidDestroyed;
+
+        private void Start()
+        {
+            _transform = GetComponent<Transform>();
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -18,6 +26,8 @@ namespace AsteroidsApp.Asteroid
             }
 
             OnAsteroidDestroyed?.Invoke();
+            OnAnyAsteroidDestroyed?.Invoke(_transform);
+
             gameObject.SetActive(false);
         }
     }
