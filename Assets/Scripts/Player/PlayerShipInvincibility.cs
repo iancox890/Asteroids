@@ -11,19 +11,18 @@ namespace AsteroidsApp.Player
     /// </summary>
     public class PlayerShipInvincibility : MonoBehaviour
     {
+        [SerializeField] private PlayerRespawnHandler _respawnHandler;
+        [Space(2)]
         [SerializeField] private float _duration;
         [SerializeField] private float _flashCount;
         [SerializeField] private float _opacity;
 
-        private PlayerRespawnHandler _respawnHandler;
         private PlayerShipDeathHandler _deathHandler;
-
         private SpriteRenderer _spriteRenderer;
         private Color _spriteColor;
 
         private void Start()
         {
-            _respawnHandler = GetComponentInParent<PlayerRespawnHandler>();
             _deathHandler = GetComponent<PlayerShipDeathHandler>();
 
             _spriteRenderer = GetComponent<SpriteRenderer>();

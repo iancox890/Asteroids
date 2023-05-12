@@ -8,18 +8,16 @@ namespace AsteroidsApp.Player
     /// </summary>
     public class PlayerLifeManager : MonoBehaviour
     {
+        [SerializeField] private PlayerShipDeathHandler _deathHandler;
         [SerializeField] private int _lifeCount;
 
-        private PlayerShipDeathHandler _deathHandler;
         private int _currentLifeCount;
 
         public event System.Action<int> OnLifeLost;
 
         private void Start()
         {
-            _deathHandler = GetComponentInChildren<PlayerShipDeathHandler>();
             _deathHandler.OnDeath += SubtractLife;
-
             _currentLifeCount = _lifeCount;
         }
 

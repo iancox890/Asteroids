@@ -8,7 +8,7 @@ namespace AsteroidsApp.Player
     /// </summary>
     public class PlayerRespawnHandler : MonoBehaviour
     {
-        [SerializeField] private Transform _playerShip;
+        [SerializeField] private GameObject _playerShip;
         [SerializeField] private float _respawnDelay;
 
         private PlayerLifeManager _lifeManager;
@@ -36,7 +36,7 @@ namespace AsteroidsApp.Player
 
         private void Respawn()
         {
-            _playerShip.gameObject.SetActive(true);
+            _playerShip.SetActive(true);
             OnRespawn?.Invoke();
         }
     }
