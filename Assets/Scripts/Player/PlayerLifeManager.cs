@@ -9,7 +9,9 @@ namespace AsteroidsApp.Player
     public class PlayerLifeManager : MonoBehaviour
     {
         [SerializeField] private PlayerShipDeathHandler _deathHandler;
-        [SerializeField] private int _lifeCount;
+
+        [SerializeField] private int _startingLives;
+        public int StartingLives => _startingLives;
 
         private int _currentLifeCount;
 
@@ -18,7 +20,7 @@ namespace AsteroidsApp.Player
         private void Start()
         {
             _deathHandler.OnDeath += SubtractLife;
-            _currentLifeCount = _lifeCount;
+            _currentLifeCount = _startingLives;
         }
 
         private void OnDestroy()
