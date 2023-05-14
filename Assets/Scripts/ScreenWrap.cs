@@ -11,9 +11,12 @@ namespace AsteroidsApp
         private Transform _transform;
         private Vector2 _wrapBounds;
 
-        private void Start()
+        private void OnEnable()
         {
-            _transform = GetComponent<Transform>();
+            if (_transform == null)
+            {
+                _transform = GetComponent<Transform>();
+            }
 
             Vector2 scaleOffset = _transform.localScale * GetComponent<SpriteRenderer>().size;
 

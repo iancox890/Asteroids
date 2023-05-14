@@ -19,7 +19,7 @@ namespace AsteroidsApp.Asteroid
         private AsteroidDestroyer _asteroidDestruction;
         private Transform _transform;
 
-        private void Start()
+        private void Awake()
         {
             _objectPool = FindObjectOfType<ObjectPool>();
 

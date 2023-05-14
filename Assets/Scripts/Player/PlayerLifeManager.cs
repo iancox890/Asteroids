@@ -32,8 +32,6 @@ namespace AsteroidsApp.Player
         {
             _currentLifeCount--;
             OnLifeLost?.Invoke(_currentLifeCount);
-
-            Debug.Log("Lives remaining: " + _currentLifeCount);
         }
     }
 }
