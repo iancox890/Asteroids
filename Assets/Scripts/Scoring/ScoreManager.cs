@@ -18,7 +18,7 @@ namespace AsteroidsApp.ScoreManagement
             get => _score;
             set
             {
-                _score = value + Mathf.RoundToInt(_waveMultiplier * _waveManager.Wave);
+                _score = value + Mathf.RoundToInt(_waveMultiplier * _waveManager.Wave - 1);
                 OnScoreUpdated?.Invoke(_score);
             }
         }

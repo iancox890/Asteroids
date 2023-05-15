@@ -42,7 +42,7 @@ namespace AsteroidsApp.WaveManagement
 
         private IEnumerator SpawnWave()
         {
-            int asteroidsToSpawn = (int)(_spawnCount + (_spawnMultiplier * _waveManager.Wave));
+            int asteroidsToSpawn = (int)(_spawnCount + (_spawnMultiplier * (_waveManager.Wave - 1)));
 
             for (int i = 0; i < asteroidsToSpawn; i++)
             {

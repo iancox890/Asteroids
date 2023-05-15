@@ -18,7 +18,7 @@ namespace AsteroidsApp
                 _transform = GetComponent<Transform>();
             }
 
-            Vector2 scaleOffset = _transform.localScale * GetComponent<SpriteRenderer>().size;
+            Vector2 scaleOffset = _transform.localScale;//* GetComponent<SpriteRenderer>().size;
 
             _wrapBounds = ScreenBounds.Bounds;
 

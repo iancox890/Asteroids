@@ -13,7 +13,7 @@ namespace AsteroidsApp.WaveManagement
 
         private WaitForSeconds _waveStartTime;
 
-        private int _wave = -1;
+        private int _wave;
         public int Wave => _wave;
 
         public event System.Action OnBeginWave;
