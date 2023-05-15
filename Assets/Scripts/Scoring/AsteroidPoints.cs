@@ -37,9 +37,12 @@ namespace AsteroidsApp.ScoreManagement
             _asteroidDestroyer.OnAsteroidDestroyed -= AddPointsToScore;
         }
 
-        private void AddPointsToScore()
+        private void AddPointsToScore(string tag)
         {
-            _scoreManager.Score += _points + Mathf.RoundToInt(_pointMultiplierFromScale * _scale);
+            if (tag.Equals("Projectile"))
+            {
+                _scoreManager.Score += _points + Mathf.RoundToInt(_pointMultiplierFromScale * _scale);
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace AsteroidsApp.Asteroid
             _asteroidDestruction.OnAsteroidDestroyed -= Split;
         }
 
-        private void Split()
+        private void Split(string tag)
         {
             float asteroidScale = _transform.localScale.x;
 

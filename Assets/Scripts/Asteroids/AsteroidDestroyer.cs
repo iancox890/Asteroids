@@ -10,7 +10,7 @@ namespace AsteroidsApp.Asteroid
     {
         private Transform _transform;
 
-        public event Action OnAsteroidDestroyed;
+        public event Action<string> OnAsteroidDestroyed;
         public static event Action<Transform> OnAnyAsteroidDestroyed;
 
         private void Start()
@@ -25,7 +25,7 @@ namespace AsteroidsApp.Asteroid
                 return;
             }
 
-            OnAsteroidDestroyed?.Invoke();
+            OnAsteroidDestroyed?.Invoke(other.tag);
             OnAnyAsteroidDestroyed?.Invoke(_transform);
 
             gameObject.SetActive(false);
