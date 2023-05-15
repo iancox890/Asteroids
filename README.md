@@ -5,7 +5,7 @@ Still a work in progress.
 
 Some ideas I have in mind for this variation:
 
-* Power ups (different blasters, etc)
+* Power ups / collectibles
 
 * Different enemy types
 
