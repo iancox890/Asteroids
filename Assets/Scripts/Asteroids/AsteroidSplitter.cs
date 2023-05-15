@@ -49,7 +49,7 @@ namespace AsteroidsApp.Asteroid
             for (int i = 0; i < SPLIT_COUNT; i++)
             {
                 Vector2 scale = Vector2.one * asteroidScale * scalePercent;
-                AsteroidSpawner.Spawn(scale, position);
+                AsteroidSpawner.Spawn(scale, position, Random.insideUnitCircle);
             }
         }
     }

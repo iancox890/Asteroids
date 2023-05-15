@@ -9,18 +9,16 @@ namespace AsteroidsApp.Asteroid
     public static class AsteroidSpawner
     {
         private static ObjectPool _objectPool;
+        private const string ASTEROID_KEY = "Asteroid";
 
-        public static void Spawn(Vector2 scale, Vector2 position)
+        public static void Spawn(Vector2 scale, Vector2 position, Vector2 direction)
         {
             if (_objectPool == null)
             {
                 _objectPool = GameObject.FindObjectOfType<ObjectPool>();
             }
 
-            AsteroidController asteroid = _objectPool.PullObjectFromPool<AsteroidController>("Asteroid");
-
-            asteroid.Initialize(scale, position);
-            asteroid.gameObject.SetActive(true);
+            _objectPool.PullObjectFromPool<AsteroidController>(ASTEROID_KEY).Initialize(scale, position, direction);
         }
     }
 }
