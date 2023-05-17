@@ -1,0 +1,7 @@
+Basic Ship:
+
+default speed, no powerups/special abilities, single projectile fired when space bar is clicked.
+
+Upgraded Ship 1:
+
+improved aerodynamics, double tapping w will intiate a quick dash with a brief invincibility period, reduced cool down between shots.

@@ -1,5 +1,7 @@
+using System.IO.IsolatedStorage;
 using UnityEngine;
 using AsteroidsApp.WaveManagement;
+using AsteroidsApp.FileManagement;
 
 namespace AsteroidsApp.ScoreManagement
 {
@@ -10,6 +12,7 @@ namespace AsteroidsApp.ScoreManagement
     {
         [SerializeField] private float _waveMultiplier;
 
+        private GameManager _gameManager;
         private WaveManager _waveManager;
 
         private int _score;
@@ -27,7 +30,36 @@ namespace AsteroidsApp.ScoreManagement
 
         private void Start()
         {
+            _gameManager = FindObjectOfType<GameManager>();
             _waveManager = FindObjectOfType<WaveManager>();
+
+            _gameManager.OnGameOver += Save;
+
+            var playerPoints = FileUtility.GetFile<PlayerPointsFile>("PlayerPoints");
+            Debug.Log(Application.persistentDataPath);
+
+            if (playerPoints != null)
+            {
+                Debug.Log(playerPoints.Points);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            _gameManager.OnGameOver -= Save;
+        }
+
+        private void Save()
+        {
+            PlayerPointsFile playerPoints = FileUtility.GetFile<PlayerPointsFile>("PlayerPoints");
+
+            if (playerPoints == null)
+            {
+                playerPoints = new PlayerPointsFile();
+            }
+
+            playerPoints.Points += _score;
+            playerPoints.Save();
         }
     }
 }

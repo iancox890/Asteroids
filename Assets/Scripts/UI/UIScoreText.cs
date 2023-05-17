@@ -9,6 +9,8 @@ namespace AsteroidsApp.UI
     /// </summary>
     public class UIScoreText : MonoBehaviour
     {
+        [SerializeField] private string _prefix;
+
         private ScoreManager _scoreManager;
         private TextMeshProUGUI _scoreText;
 
@@ -16,6 +18,8 @@ namespace AsteroidsApp.UI
         {
             _scoreManager = FindObjectOfType<ScoreManager>();
             _scoreText = GetComponent<TextMeshProUGUI>();
+
+            UpdateText(_scoreManager.Score);
 
             _scoreManager.OnScoreUpdated += UpdateText;
         }
@@ -27,7 +31,7 @@ namespace AsteroidsApp.UI
 
         private void UpdateText(int score)
         {
-            _scoreText.text = $"+{score}";
+            _scoreText.text = _prefix + score.ToString();
         }
     }
 }
