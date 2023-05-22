@@ -1,17 +1,23 @@
 using UnityEngine;
 
-namespace AsteroidsApp.FileManagement
+namespace AsteroidsApp.FileData
 {
     /// <summary>
     /// Holds the data for the players total points earned.
     /// </summary>
     [System.Serializable]
-    public class PlayerPointsFile : IFile
+    public class PointsData : IFile
     {
-        public string FileName => "PlayerPoints";
+        private string _fileName;
+        public string FileName => _fileName;
 
         [SerializeField] private int _points;
         public int Points { get => _points; set => _points = value; }
+
+        public PointsData(string fileName)
+        {
+            _fileName = fileName;
+        }
 
         public void Save()
         {

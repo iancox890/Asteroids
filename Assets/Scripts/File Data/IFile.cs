@@ -1,4 +1,4 @@
-namespace AsteroidsApp.FileManagement
+namespace AsteroidsApp.FileData
 {
     public interface IFile
     {

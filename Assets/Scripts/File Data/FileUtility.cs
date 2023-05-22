@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-namespace AsteroidsApp.FileManagement
+namespace AsteroidsApp.FileData
 {
     /// <summary>
     /// Utility class for saving and getting game files in JSON.
@@ -10,7 +10,10 @@ namespace AsteroidsApp.FileManagement
     {
         public static readonly string FileDirectory;
 
-        static FileUtility() => FileDirectory = Directory.CreateDirectory(Application.persistentDataPath + "/Files").FullName;
+        static FileUtility()
+        {
+            FileDirectory = Directory.CreateDirectory(Application.persistentDataPath + "/Files").FullName;
+        }
 
         ///<summary>Returns the full path of a file contained in the files directory.</summary>
         public static string GetPath(string fileName)

@@ -1,0 +1,50 @@
+The store will contain both new colors for the player ship, along with ship upgrades.
+
+Each store item will:
+
+Be equippable. When it is equipped, it will override the current player save replacing the current equipped item with the new one.
+Have a price using the player points as currency.
+
+Either be available for purchase, or unavailable depending on the players available points. (and maybe xp level)
+
+Need to persist whether or not it has been purchased. If it is purchased, then it will be equippable.
+Deduct the players total points on purchase.
+
+A store item has:
+
+points (cost)
+item (gameobject, color, etc)
+an is purchased state
+
+A store item can:
+
+be equipped/unequipped
+be purchased
+
+A way to approach this is make StoreItem a parent class, with serialized fields for points, and an is purchased state as well as a purchase method.
+Since a store item exists primarily in the realm of being purchased or unpurchased, it could be separate from being equippable.
+
+For equpping and unequiping, we could use an IEquippable interface with Equip/Unequip methods. This would leave the
+implementing class full power over what is equipped/unequipped.
+
+class StoreItem
+
+    int points;
+    bool isPurchased;
+
+    void Start()
+    {
+        find store item data
+        isPurchased = saved purchased state
+    }
+
+    void Purchase()
+    {
+        if totalPoints >= points
+
+            totalPoints -= points
+            isPurchased = true;
+
+            save this file
+    }
+
