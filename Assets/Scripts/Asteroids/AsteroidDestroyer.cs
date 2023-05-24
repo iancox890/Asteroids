@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace AsteroidsApp.Asteroid
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Handles the destruction for a given asteroid. (i.e., getting hit by a projectile)

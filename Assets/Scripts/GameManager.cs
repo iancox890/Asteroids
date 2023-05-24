@@ -1,7 +1,7 @@
 using UnityEngine;
-using AsteroidsApp.Player;
+using Asteroids.Gameplay;
 
-namespace AsteroidsApp
+namespace Asteroids
 {
     /// <summary>
     /// Manages the game over state.

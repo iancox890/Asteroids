@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Asteroid
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Handles destruction particles for an asteroid by

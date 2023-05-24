@@ -1,7 +1,6 @@
 using UnityEngine;
-using AsteroidsApp.Asteroid;
 
-namespace AsteroidsApp.ScoreManagement
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Controls how points are calculated/added to the score 
@@ -41,7 +40,7 @@ namespace AsteroidsApp.ScoreManagement
         {
             if (tag.Equals("Projectile"))
             {
-                _scoreManager.Score += _points + Mathf.RoundToInt(_pointMultiplierFromScale * _scale);
+                _scoreManager.Points += _points + Mathf.RoundToInt(_pointMultiplierFromScale * _scale);
             }
         }
     }

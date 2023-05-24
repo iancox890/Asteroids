@@ -5598,6 +5598,7 @@ GameObject:
   - component: {fileID: 921361628}
   - component: {fileID: 921361631}
   - component: {fileID: 921361632}
+  - component: {fileID: 921361633}
   - component: {fileID: 921361629}
   - component: {fileID: 921361625}
   - component: {fileID: 921361627}
@@ -5651,7 +5652,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f7c8ef3d6d756c4c8770dcf1b96a1ee, type: 3}
-  m_Color: {r: 0, g: 0.77752113, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5781,6 +5782,19 @@ MonoBehaviour:
   _duration: 2
   _flashCount: 2
   _opacity: 0.15
+--- !u!114 &921361633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921361624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd46aba56f7d98347b1062913001dcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: ead7931fd3fdda04baeee66e2188d3e1, type: 2}
 --- !u!1 &968603809
 GameObject:
   m_ObjectHideFlags: 0
@@ -6705,6 +6719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waveMultiplier: 1.5
+  _playerData: {fileID: 11400000, guid: ead7931fd3fdda04baeee66e2188d3e1, type: 2}
 --- !u!4 &1526316587
 Transform:
   m_ObjectHideFlags: 0

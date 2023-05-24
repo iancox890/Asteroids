@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Manages how many lives the player has, and notifies

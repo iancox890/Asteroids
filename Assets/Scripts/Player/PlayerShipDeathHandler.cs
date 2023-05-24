@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Controls when and if the player ship dies.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Plays the death particles from the ship when the

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp
+namespace Asteroids
 {
     /// <summary>
     /// Helper class for accessing and manipulating

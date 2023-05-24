@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Give the player a period of invincibility where they cannot die. (indicated with an opacity flash)

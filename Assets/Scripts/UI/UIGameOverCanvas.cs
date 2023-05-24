@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp
+namespace Asteroids
 {
     /// <summary>
     /// Activates the game over screen and deactivates

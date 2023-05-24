@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace AsteroidsApp.WaveManagement
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Manages the waves of asteroids/enemies on an 

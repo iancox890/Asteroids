@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace AsteroidsApp
+namespace Asteroids
 {
     /// <summary>
     /// Manages a list of object pools accessible via a string key.

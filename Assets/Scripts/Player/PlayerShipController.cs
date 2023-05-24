@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Handles input and movement for the player ship.

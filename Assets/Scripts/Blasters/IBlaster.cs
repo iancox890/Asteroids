@@ -1,4 +1,4 @@
-namespace AsteroidsApp.Blasters
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Defines the blaster fire method and input handling.

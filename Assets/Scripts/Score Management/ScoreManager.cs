@@ -1,8 +1,8 @@
 using UnityEngine;
-using AsteroidsApp.WaveManagement;
-using AsteroidsApp.FileData;
+using Asteroids.Gameplay;
+using Asteroids.Data;
 
-namespace AsteroidsApp.ScoreManagement
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Manages the score and notifies any event listeners when it is updated.
@@ -10,20 +10,19 @@ namespace AsteroidsApp.ScoreManagement
     public class ScoreManager : MonoBehaviour
     {
         [SerializeField] private float _waveMultiplier;
-
-        public const string POINTS_DATA_FILE_NAME = "PointsData";
+        [SerializeField] private PlayerData _playerData;
 
         private GameManager _gameManager;
         private WaveManager _waveManager;
 
-        private int _score;
-        public int Score
+        private int _points;
+        public int Points
         {
-            get => _score;
+            get => _points;
             set
             {
-                _score = value + Mathf.RoundToInt(_waveMultiplier * _waveManager.Wave - 1);
-                OnScoreUpdated?.Invoke(_score);
+                _points = value + Mathf.RoundToInt(_waveMultiplier * _waveManager.Wave - 1);
+                OnScoreUpdated?.Invoke(_points);
             }
         }
 
@@ -44,15 +43,7 @@ namespace AsteroidsApp.ScoreManagement
 
         private void Save()
         {
-            PointsData pointsData = FileUtility.GetFile<PointsData>(POINTS_DATA_FILE_NAME);
-
-            if (pointsData == null)
-            {
-                pointsData = new PointsData(POINTS_DATA_FILE_NAME);
-            }
-
-            pointsData.Points += _score;
-            pointsData.Save();
+            _playerData.File.Points += _points;
         }
     }
 }

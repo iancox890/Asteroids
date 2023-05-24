@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.WaveManagement
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Represents an enemy actor which is a part of a wave.

@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-using AsteroidsApp.Asteroid;
-
-namespace AsteroidsApp.WaveManagement
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Responsible for the spawn details of asteroids for each wave.

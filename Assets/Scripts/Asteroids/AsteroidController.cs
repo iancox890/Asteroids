@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Asteroid
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Handles the asteroid movement and position/scale.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AsteroidsApp.Player
+namespace Asteroids.Gameplay
 {
     /// <summary>
     /// Handle the respawn for the player if they haven't lost
