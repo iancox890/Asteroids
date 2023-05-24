@@ -4,7 +4,8 @@ using Asteroids.Data;
 namespace Asteroids.Gameplay
 {
     /// <summary>
-    /// Sets the player ships sprite renderer color to the currently equipped color value.
+    /// Sets the player ships sprite renderer/particle system color 
+    /// to the currently equipped color value.
     /// </summary>
     public class PlayerShipColor : MonoBehaviour
     {
@@ -13,7 +14,7 @@ namespace Asteroids.Gameplay
         private void Start()
         {
             Color shipColor = _playerData.File.ShipColor;
-            GetComponent<SpriteRenderer>().color = shipColor;
+            GetComponentInChildren<SpriteRenderer>().color = shipColor;
 
             var main = GetComponentInChildren<ParticleSystem>().main;
             main.startColor = shipColor;
