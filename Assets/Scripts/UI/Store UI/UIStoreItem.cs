@@ -11,22 +11,14 @@ namespace Asteroids.UI
     /// </summary>
     public class UIStoreItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        [UnityEngine.Serialization.FormerlySerializedAs("_storeItem")]
-        [SerializeField] private StoreData _storeData;
-        public StoreData StoreData => _storeData;
-
-        [Space(5)]
-
-        [UnityEngine.Serialization.FormerlySerializedAs("_highlight")]
         [SerializeField] private Image _selectedHighlight;
-        [SerializeField] private Image _equippedHighlight;
-        [Space(2)]
         [SerializeField] private TextMeshProUGUI _itemText;
-
         [Space(2)]
-
         [SerializeField] private float _selectedHighlightOpacity;
         [SerializeField] private float _hoverHighlightOpacity;
+
+        private StoreData _storeData;
+        public StoreData StoreData { get => _storeData; set => _storeData = value; }
 
         private UIStoreManager _storeManager;
         private UIStoreEquipHandler _equipHandler;
@@ -71,12 +63,10 @@ namespace Asteroids.UI
                 if (_storeData.File.IsEquipped)
                 {
                     _itemText.text = "Equipped";
-                    _equippedHighlight.enabled = true;
                 }
                 else
                 {
                     _itemText.text = "Owned";
-                    _equippedHighlight.enabled = false;
                 }
             }
             else

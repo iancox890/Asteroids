@@ -11,7 +11,7 @@ namespace Asteroids.Gameplay
     {
         [SerializeField] private PlayerData _playerData;
 
-        private void Start()
+        private void Awake()
         {
             Color shipColor = _playerData.File.ShipColor;
             GetComponentInChildren<SpriteRenderer>().color = shipColor;
