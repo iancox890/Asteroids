@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Asteroids.Data;
 
 namespace Asteroids.UI
@@ -14,8 +15,20 @@ namespace Asteroids.UI
 
         private void Start()
         {
+            Color shipColor = _playerData.File.ShipColor;
+
             Image image = GetComponent<Image>();
-            image.color = _playerData.File.ShipColor.SetOpacity(image.color.a);
+            if (image != null)
+            {
+                image.color = _playerData.File.ShipColor.SetOpacity(image.color.a);
+                return;
+            }
+
+            TextMeshProUGUI textMesh = GetComponent<TextMeshProUGUI>();
+            if (textMesh != null)
+            {
+                textMesh.color = shipColor.SetOpacity(textMesh.color.a);
+            }
         }
     }
 }

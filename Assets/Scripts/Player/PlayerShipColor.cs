@@ -12,7 +12,11 @@ namespace Asteroids.Gameplay
 
         private void Start()
         {
-            GetComponent<SpriteRenderer>().color = _playerData.File.ShipColor;
+            Color shipColor = _playerData.File.ShipColor;
+            GetComponent<SpriteRenderer>().color = shipColor;
+
+            var main = GetComponentInChildren<ParticleSystem>().main;
+            main.startColor = shipColor;
         }
     }
 }
