@@ -15,6 +15,17 @@ namespace Asteroids.UI
 
         private void Start()
         {
+            UpdateColor();
+            _playerData.OnPlayerFileSaved += UpdateColor;
+        }
+
+        private void OnDestroy()
+        {
+            _playerData.OnPlayerFileSaved -= UpdateColor;
+        }
+
+        private void UpdateColor()
+        {
             Color shipColor = _playerData.File.ShipColor;
 
             Image image = GetComponent<Image>();

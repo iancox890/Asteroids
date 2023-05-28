@@ -1,6 +1,7 @@
 using UnityEngine;
+using Asteroids.Gameplay;
 
-namespace Asteroids
+namespace Asteroids.UI
 {
     /// <summary>
     /// Activates the game over screen and deactivates
@@ -11,17 +12,14 @@ namespace Asteroids
         [SerializeField] private GameObject _gameplayCanvas;
         [SerializeField] private GameObject _gameOverPanel;
 
-        private GameManager _gameManager;
-
         private void Start()
         {
-            _gameManager = FindObjectOfType<GameManager>();
-            _gameManager.OnGameOver += Activate;
+            GameManager.OnGameOver += Activate;
         }
 
         private void OnDestroy()
         {
-            _gameManager.OnGameOver -= Activate;
+            GameManager.OnGameOver -= Activate;
         }
 
         private void Activate()

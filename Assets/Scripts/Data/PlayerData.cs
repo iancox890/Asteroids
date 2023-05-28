@@ -10,6 +10,9 @@ namespace Asteroids.Data
     {
         [SerializeField] private string _fileName;
         [SerializeField] private ShipColorData _defaultShipColor;
+        [SerializeField] private ShipUpgradeData _defaultShip;
+
+        public event System.Action OnPlayerFileSaved;
 
         private PlayerFile _playerFile;
         public PlayerFile File
@@ -22,6 +25,7 @@ namespace Asteroids.Data
                 {
                     _playerFile = new PlayerFile();
                     _playerFile.ShipColor = _defaultShipColor.Color;
+                    _playerFile.Ship = _defaultShip.ShipUpgrade.name;
 
                     FileUtility.WriteToFile(_playerFile, _fileName);
                 }
@@ -33,6 +37,7 @@ namespace Asteroids.Data
         public void SavePlayerFile()
         {
             FileUtility.WriteToFile(_playerFile, _fileName);
+            OnPlayerFileSaved?.Invoke();
         }
     }
 }

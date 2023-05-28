@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Asteroids.Gameplay
@@ -8,12 +9,18 @@ namespace Asteroids.Gameplay
     /// </summary>
     public class PauseHandler : MonoBehaviour
     {
-        [SerializeField] private MonoBehaviour[] _behaviorsToPause;
+        private IPausable[] _behaviorsToPause;
 
-        private bool _isPaused;
-        public bool IsPaused => _isPaused;
+        private static bool _isPaused;
+        public static bool IsPaused => _isPaused;
 
-        public event System.Action OnPaused;
+        public static event System.Action OnPaused;
+
+        private void Start()
+        {
+            _behaviorsToPause = FindObjectsOfType<MonoBehaviour>().OfType<IPausable>().ToArray();
+            GameManager.OnGameOver += Disable;
+        }
 
         private void LateUpdate()
         {
@@ -23,6 +30,19 @@ namespace Asteroids.Gameplay
             }
         }
 
+        private void OnDisable()
+        {
+            Time.timeScale = 1;
+            _isPaused = false;
+
+            GameManager.OnGameOver -= Disable;
+        }
+
+        private void Disable()
+        {
+            enabled = false;
+        }
+
         public void SetPausedState(bool isPaused)
         {
             _isPaused = isPaused;
@@ -30,7 +50,7 @@ namespace Asteroids.Gameplay
 
             for (int i = 0; i < _behaviorsToPause.Length; i++)
             {
-                _behaviorsToPause[i].enabled = !_isPaused;
+                _behaviorsToPause[i].OnPause();
             }
 
             OnPaused?.Invoke();

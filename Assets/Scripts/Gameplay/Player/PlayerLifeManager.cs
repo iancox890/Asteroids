@@ -30,7 +30,7 @@ namespace Asteroids.Gameplay
 
         private void SubtractLife()
         {
-            _currentLifeCount--;
+            _currentLifeCount = Mathf.Clamp(_currentLifeCount - 1, 0, _startingLives);
             OnLifeLost?.Invoke(_currentLifeCount);
         }
     }

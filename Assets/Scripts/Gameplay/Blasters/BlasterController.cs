@@ -5,7 +5,7 @@ namespace Asteroids.Gameplay
     /// <summary>
     /// Handles the current IBlaster attached to this object.
     /// </summary>
-    public class BlasterController : MonoBehaviour
+    public class BlasterController : MonoBehaviour, IPausable
     {
         private IBlaster _blaster;
 
@@ -20,6 +20,11 @@ namespace Asteroids.Gameplay
             {
                 _blaster.Fire();
             }
+        }
+
+        public void OnPause()
+        {
+            enabled = !enabled;
         }
     }
 }

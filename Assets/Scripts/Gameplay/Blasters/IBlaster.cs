@@ -7,5 +7,6 @@ namespace Asteroids.Gameplay
     {
         void Fire();
         bool HandleInput();
+        event System.Action OnFire;
     }
 }

@@ -28,21 +28,21 @@ namespace Asteroids.Gameplay
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _spriteColor = _spriteRenderer.color;
 
-            _respawnHandler.OnRespawn += StartInvincibilityCoroutine;
+            _respawnHandler.OnRespawn += StartRespawnInvincibility;
         }
 
         private void OnDestroy()
         {
-            _respawnHandler.OnRespawn -= StartInvincibilityCoroutine;
+            _respawnHandler.OnRespawn -= StartRespawnInvincibility;
         }
 
-        private void StartInvincibilityCoroutine()
+        private void StartRespawnInvincibility()
         {
             StopAllCoroutines();
             StartCoroutine(EnableInvincibility(Time.time + _duration));
         }
 
-        private IEnumerator EnableInvincibility(float invincibilityEndTime)
+        public IEnumerator EnableInvincibility(float invincibilityEndTime)
         {
             _collider.enabled = false;
 

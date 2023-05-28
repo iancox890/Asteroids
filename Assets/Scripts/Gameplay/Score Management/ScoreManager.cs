@@ -12,7 +12,6 @@ namespace Asteroids.Gameplay
         [SerializeField] private float _waveMultiplier;
         [SerializeField] private PlayerData _playerData;
 
-        private GameManager _gameManager;
         private WaveManager _waveManager;
 
         private int _points;
@@ -30,20 +29,19 @@ namespace Asteroids.Gameplay
 
         private void Start()
         {
-            _gameManager = FindObjectOfType<GameManager>();
             _waveManager = FindObjectOfType<WaveManager>();
-
-            _gameManager.OnGameOver += Save;
+            GameManager.OnGameOver += Save;
         }
 
         private void OnDestroy()
         {
-            _gameManager.OnGameOver -= Save;
+            GameManager.OnGameOver -= Save;
         }
 
         private void Save()
         {
             _playerData.File.Points += _points;
+            _playerData.SavePlayerFile();
         }
     }
 }

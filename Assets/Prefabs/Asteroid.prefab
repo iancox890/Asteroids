@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3718589028504122902}
   - component: {fileID: 8663372243217941036}
   - component: {fileID: 1089157721098001786}
-  - component: {fileID: 2576547244697275469}
   - component: {fileID: 598867962772880791}
+  - component: {fileID: 5082184908832536429}
+  - component: {fileID: 2576547244697275469}
   - component: {fileID: 3314729100835986800}
   - component: {fileID: 354155969505292465}
   - component: {fileID: 3862033996205170200}
@@ -79,18 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _splitScaleThreshold: 1
---- !u!114 &2576547244697275469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2696715453529802585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b59c91111011643beeda8dbd1bb9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &598867962772880791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +94,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _points: 100
   _pointMultiplierFromScale: 50
+--- !u!114 &5082184908832536429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696715453529802585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4711225bc819be34f8409a753c5bb527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _asteroidGradient:
+    serializedVersion: 2
+    key0: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    key1: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+    key2: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    key3: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    key4: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    key5: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    key6: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    key7: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+    ctime0: 0
+    ctime1: 65342
+    ctime2: 65342
+    ctime3: 65342
+    ctime4: 65342
+    ctime5: 65342
+    ctime6: 65342
+    ctime7: 65342
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+--- !u!114 &2576547244697275469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696715453529802585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b59c91111011643beeda8dbd1bb9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3314729100835986800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +201,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33e68f6444ebbe046ad2b815ec79e1d7, type: 3}
-  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

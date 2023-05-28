@@ -15,6 +15,8 @@ namespace Asteroids.Gameplay
         private Transform _transform;
         private float _coolDownTime;
 
+        public event System.Action OnFire;
+
         private void Start()
         {
             _objectPool = FindObjectOfType<ObjectPool>();
@@ -29,6 +31,8 @@ namespace Asteroids.Gameplay
             projectile.gameObject.SetActive(true);
 
             projectile.velocity = _transform.up * _blastForce;
+
+            OnFire?.Invoke();
         }
 
         public bool HandleInput()

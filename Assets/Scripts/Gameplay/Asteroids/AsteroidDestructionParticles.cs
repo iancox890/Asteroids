@@ -10,6 +10,7 @@ namespace Asteroids.Gameplay
     public class AsteroidDestructionParticles : MonoBehaviour
     {
         [SerializeField] private int _particleCount;
+        [SerializeField] private Gradient _particleGradient;
 
         private ParticleSystem _particleSystem;
         private ParticleSystem.EmitParams _emitParams;
@@ -17,8 +18,8 @@ namespace Asteroids.Gameplay
         private void Start()
         {
             _particleSystem = GetComponent<ParticleSystem>();
-            _emitParams = new ParticleSystem.EmitParams();
 
+            _emitParams = new ParticleSystem.EmitParams();
             _emitParams.applyShapeToPosition = true;
 
             AsteroidDestroyer.OnAnyAsteroidDestroyed += Play;
@@ -32,7 +33,13 @@ namespace Asteroids.Gameplay
         private void Play(Transform transform)
         {
             _emitParams.position = transform.position;
-            _particleSystem.Emit(_emitParams, Mathf.RoundToInt((_particleCount * transform.localScale.x)));
+            int emissionCount = Mathf.RoundToInt((_particleCount * transform.localScale.x));
+
+            for (int i = 0; i < emissionCount; i++)
+            {
+                _emitParams.startColor = _particleGradient.Evaluate(Random.value);
+                _particleSystem.Emit(_emitParams, 1);
+            }
         }
     }
 }

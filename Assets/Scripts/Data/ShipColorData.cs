@@ -5,7 +5,7 @@ namespace Asteroids.Data
     /// <summary>
     /// Represents any ship color store item.
     /// </summary>
-    [CreateAssetMenu(menuName = "Store Items/Ship Color", fileName = "Ship Color")]
+    [CreateAssetMenu(menuName = "Asteroids/Store Items/Ship Color", fileName = "Ship Color")]
     public class ShipColorData : StoreData
     {
         [Header("Color Data")]

@@ -10,22 +10,19 @@ namespace Asteroids.UI
     {
         [SerializeField] private GameObject _pausePanel;
 
-        private PauseHandler _pauseHandler;
-
         private void Start()
         {
-            _pauseHandler = FindObjectOfType<PauseHandler>();
-            _pauseHandler.OnPaused += TogglePanel;
+            PauseHandler.OnPaused += TogglePanel;
         }
 
         private void OnDestroy()
         {
-            _pauseHandler.OnPaused -= TogglePanel;
+            PauseHandler.OnPaused -= TogglePanel;
         }
 
         private void TogglePanel()
         {
-            _pausePanel.SetActive(_pauseHandler.IsPaused);
+            _pausePanel.SetActive(PauseHandler.IsPaused);
         }
     }
 }

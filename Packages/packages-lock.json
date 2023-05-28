@@ -1,11 +1,14 @@
 {
   "dependencies": {
     "com.singularitygroup.hotreload": {
-      "version": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.10.4",
+      "version": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.10.12",
       "depth": 0,
       "source": "git",
-      "dependencies": {},
-      "hash": "63af070508f19947123865261b16523139b7fe3e"
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
+      "hash": "1d3d193d19bede02de04ae4115c6791aeb216dcb"
     },
     "com.unity.2d.animation": {
       "version": "7.0.9",
@@ -257,6 +260,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "12.1.8",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.8",
+        "com.unity.render-pipelines.core": "12.1.8"
       }
     },
     "com.unity.visualscripting": {

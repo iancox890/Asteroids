@@ -31,15 +31,17 @@ namespace Asteroids.UI
 
             _storeManager.OnSelected += UpdateSelectedState;
             _storeManager.OnPurchased += UpdateItemState;
+
             _equipHandler.OnEquipped += UpdateItemState;
 
             UpdateItemState();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _storeManager.OnSelected -= UpdateSelectedState;
             _storeManager.OnPurchased -= UpdateItemState;
+
             _equipHandler.OnEquipped -= UpdateItemState;
         }
 

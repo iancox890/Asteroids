@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: abdd9c7174bd8db43b1543c16f26009c
+  m_SerializeEntries:
+  - m_GUID: ed97e4c621f19ce45b5294e8a28ae39a
+    m_Address: Assets/Prefabs/Ships/Player_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 20ddf70717ad3d1469ec8a9cbb5f8452
+    m_Address: Assets/Prefabs/Ships/Player_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 06c443b86249dee4bba3e998cbdc2f66, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 738604307ef88b44497444ad5b0c75cd, type: 2}
+    - {fileID: 11400000, guid: c4be470d56033864eb8524ee7e58692e, type: 2}

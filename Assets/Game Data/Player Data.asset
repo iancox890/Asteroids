@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fileName: Player
   _defaultShipColor: {fileID: 11400000, guid: 31e5438f4c53f9748bd152dfec0b73f9, type: 2}
+  _defaultShip: {fileID: 11400000, guid: bd77f123262583840a50139cd43e49a3, type: 2}
